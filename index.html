@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <title>Bean Boutique | Home</title>
+  <link rel="stylesheet" href="styles.css" >
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+        <div class="logo">
+            <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center;">
+              <img src="images/logo.png" alt="Bean Boutique Logo" style="height: 85px;">
+              <span style="margin-left: 10px;"></span>
+            </a>
+          </div>   
+           <ul class="nav-links">
+            <li><a href="index.html"  class="active">Home</a></li>
+            <li><a href="coffee.html">Coffee Selection</a></li>
+            <li><a href="equipment.html">Brewing Equipment</a></li>
+            <li><a href="events.html">Events & Workshops</a></li>
+            <li><a href="cart.html">Shopping Cart</a></li>
+            <li><a href="offers.html">Special Offers</a></li>
+           </ul>
+    </nav>
+  </header>
+
+  <div class="slideshow-container">
+    <div class="slideshow">
+      <img class="slide" src="images/coffee1.jpg" alt="Coffee Beans">
+      <img class="slide" src="images/coffee2.jpg" alt="Brewed Coffee">
+      <img class="slide" src="images/coffee3.jpg" alt="Coffee Shop">
+    </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search offers or subscriptions...">
+  </div>
+
+  <section class="offers">
+    <h1>Special Offers</h1>
+    <div class="offer">
+      <h2>10% Off First Purchase</h2>
+      <p>Sign up to our newsletter and receive 10% off your first order!</p>
+    </div>
+    <div class="offer">
+      <h2>Free Shipping on Orders Over $50</h2>
+      <p>Automatically applied at checkout for qualifying orders.</p>
+    </div>
+  </section>
+
+  <section class="subscriptions">
+    <h1>Coffee Subscriptions</h1>
+    <div class="subscription-plan">
+      <h2>Monthly Brew</h2>
+      <p>One 250g bag of our rotating signature blend every month.</p>
+      <p><strong>Price:</strong> $15/month</p>
+    </div>
+    <div class="subscription-plan">
+      <h2>Bi-Weekly Essentials</h2>
+      <p>Two 250g bags delivered every two weeks. Choose your favorites or let us surprise you.</p>
+      <p><strong>Price:</strong> $28/2 weeks</p>
+    </div>
+    <div class="subscription-plan">
+      <h2>Custom Choice</h2>
+      <p>Create a fully personalized subscription with your preferred frequency and blends.</p>
+      <p><strong>Price:</strong> Varies</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-info">
+      <p>&copy; 2025 Bean Boutique. All rights reserved.</p>
+      <div class="socials">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navMenu').classList.toggle('mobile-show');
+    }
+
+    // On-page search filter
+    document.getElementById('searchInput').addEventListener('keyup', function () {
+      let filter = this.value.toLowerCase();
+      let items = document.querySelectorAll('.offer, .subscription-plan');
+      items.forEach(function (item) {
+        let text = item.textContent.toLowerCase();
+        item.style.display = text.includes(filter) ? '' : 'none';
+      });
+    });
+  
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const showSlides = () => {
+      slides.forEach((slide, i) => {
+        slide.style.display = 'none';
+      });
+      slideIndex++;
+      if (slideIndex > slides.length) slideIndex = 1;
+      slides[slideIndex - 1].style.display = 'block';
+      setTimeout(showSlides, 5000);
+    };
+    showSlides();
+
+    function plusSlides(n) {
+      slideIndex += n - 1;
+      if (slideIndex < 0) slideIndex = slides.length - 1;
+      if (slideIndex >= slides.length) slideIndex = 0;
+      slides.forEach((slide) => (slide.style.display = 'none'));
+      slides[slideIndex].style.display = 'block';
+    }
+  </script>
+</body>
+</html>

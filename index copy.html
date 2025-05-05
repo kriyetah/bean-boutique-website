@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bean Boutique | Home</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+        <div class="logo">
+            <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center;">
+              <img src="images/logo.png" alt="Bean Boutique Logo" style="height: 85px;">
+              <span style="margin-left: 10px;"></span>
+            </a>
+          </div>   
+           <ul class="nav-links">
+            <li><a href="index.html"  class="active">Home</a></li>
+            <li><a href="coffee.html">Coffee Selection</a></li>
+            <li><a href="equipment.html">Brewing Equipment</a></li>
+            <li><a href="events.html">Events & Workshops</a></li>
+            <li><a href="cart.html">Shopping Cart</a></li>
+            <li><a href="offers.html">Special Offers</a></li>
+           </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="slideshow">
+      <img src="images/coffee1.jpg" alt="Coffee Beans" width="100">
+      <img src="images/coffee2.jpg" alt="" width="800">
+      <img src="images/coffee3.jpg" alt="">
+    </div>
+    <div class="overlay">
+      <h1>Welcome to Bean Boutique</h1>
+      <p>Your haven for premium coffee and community.</p>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <img src="images/beans.jpg" alt="Unique Blends">
+      <h3>Unique Blends</h3>
+      <p>Explore our single-origin coffees and custom blends.</p>
+    </div>
+    <div class="feature">
+      <img src="images/equipment.jpg" alt="Brewing Gear">
+      <h3>Brewing Gear</h3>
+      <p>Top-notch brewing equipment for the perfect cup.</p>
+    </div>
+    <div class="feature">
+      <img src="images/workshop.jpg" alt="Events">
+      <h3>Events & Workshops</h3>
+      <p>Join our coffee tasting and brewing classes.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-info">
+      <p>&copy; 2025 Bean Boutique. All rights reserved.</p>
+      <div class="socials">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+    <div class="map">
+      <!-- Plugin: Embedded Google Map -->
+      <iframe src="https://www.google.com/maps/embed?..." allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </footer>
+
+  <!-- Plugin: Modal Popup -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Welcome!</h2>
+      <p>Sign up and get 10% off your first order!</p>
+      <form>
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Modal popup script
+    window.onload = () => {
+      const modal = document.getElementById("modal");
+      const closeBtn = document.querySelector(".close");
+      if (!localStorage.getItem("modalShown")) {
+        modal.style.display = "block";
+        localStorage.setItem("modalShown", true);
+      }
+      closeBtn.onclick = () => modal.style.display = "none";
+      window.onclick = (e) => {
+        if (e.target === modal) modal.style.display = "none";
+      };
+    };
+  </script>
+</body>
+</html>

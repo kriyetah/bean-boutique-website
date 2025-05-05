@@ -1,0 +1,197 @@
+/* General Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f7f3;
+  color: #333;
+}
+/* General styles here */
+
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slideshow .slide {
+  width: 100%;
+  display: none;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  transition: 0.3s;
+  user-select: none;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Navigation active link style */
+.nav-links a.active {
+  color: #a67c52; /* light brown */
+  font-weight: bold;
+}
+
+
+h1, h2 {
+  text-align: center;
+  color: #4e342e;
+}
+
+/* Navigation Bar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #96390e;
+  color: rgb(255, 255, 255);
+  position: relative;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Highlight active navigation link */
+.nav-links a.active {
+  color: #271002; /* light brown */
+  font-weight: bold;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  background-color: #be663c;
+  border-radius: 5px;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    display: none;
+    background-color: #6b4f4f;
+    position: absolute;
+    width: 100%;
+    top: 60px;
+    left: 0;
+    padding: 1rem 0;
+  }
+
+  .nav-links.mobile-show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* Sections */
+section {
+  padding: 2rem 1rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Boxes for Offers and Subscriptions */
+.offer, .subscription-plan {
+  background-color: #fff;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.offer:hover, .subscription-plan:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+/* Search Box */
+.search-container {
+  text-align: center;
+  margin: 2rem auto;
+}
+
+#searchInput {
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  width: 80%;
+  max-width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+#searchInput:focus {
+  border-color: #6b4f4f;
+  outline: none;
+}
+
+/* Footer */
+footer {
+  background-color: #96390e;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+}
+
+.footer-info {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.footer-info .socials a {
+  margin: 0 0.5rem;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.footer-info .socials a:hover {
+  color: #ffcc99;
+}
